@@ -16,7 +16,7 @@ public class MaquinaDeGolosinas {
 	public MaquinaDeGolosinas() {
 		// TODO Auto-generated constructor stub
 		try {
-			FileReader fr = new FileReader("Archivo.txt");
+			FileReader fr = new FileReader("golosinas.txt");
 			BufferedReader br = new BufferedReader(fr);
 			String line = br.readLine();
 			int numGolosinas = Integer.parseInt(line);
@@ -44,21 +44,17 @@ public class MaquinaDeGolosinas {
 			Scanner sc = new Scanner(System.in);
 
 			System.out.println();
-			System.out.printf(" %s %10s %n", "", "MÁQUINA DE GOLOSINAS", "");
+			System.out.printf("MÁQUINA DE GOLOSINAS");
 			System.out.println();
-
-			System.out.printf("%s %s %14s %n", "", "-------------------------", "");
-			System.out.printf("%s %s %s %5s %14s %n", "", "", "1.Pedir golosina.", "", "");
-
-			System.out.printf("%s %s %14s %n", "", "-------------------------", "");
-			System.out.printf("%s %s %s %14s %n", "", "", "2.Mostrar golosinas.  ", "");
-
-			System.out.printf("%s %s %14s %n", "", "-------------------------", "");
-			System.out.printf("%s %s %s %14s %n", "", "", "3.Rellenar golosinas. ", "");
-
-			System.out.printf("%s %s %14s %n", "", "-------------------------", "");
-			System.out.printf("%s %s %s %14s %n", "", "", "4.Apagar máquina.     ", "");
-			System.out.printf("%s %s %14s %n", "", "-------------------------", "");
+			System.out.println();
+			
+			System.out.printf("1.Pedir golosina.");
+			System.out.println();			
+			System.out.printf("2.Mostrar golosinas.");
+			System.out.println();	
+			System.out.printf("3.Rellenar golosinas.");
+			System.out.println();	
+			System.out.printf("4.Apagar máquina.");
 
 			int opcionMaquina = sc.nextInt();
 			switch (opcionMaquina) {
@@ -87,10 +83,12 @@ public class MaquinaDeGolosinas {
 		double ventasTotales = 0.0;
 		FileWriter fw;
 		try {
-			fw = new FileWriter("golosinasGuardado.txt");
+			fw = new FileWriter("golosinas.txt");
 			BufferedWriter bw = new BufferedWriter(fw);
 			int numGolosinas = golosinas.length;
-			String line = "" + numGolosinas;
+			String line = "4";
+			bw.write(line);
+			line="";
 			bw.write(line);
 			bw.newLine();
 			for (int x = 0; x < golosinas.length; x++) {
